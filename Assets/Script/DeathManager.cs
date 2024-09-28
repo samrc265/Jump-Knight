@@ -24,6 +24,6 @@ public class DeathManager : MonoBehaviour
     }
     void Update()
     {
-        
+       // Debug.Log("TEST");
     }
 }

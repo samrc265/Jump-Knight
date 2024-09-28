@@ -1,15 +1,17 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DistanceDisplay : MonoBehaviour
+public class Score : MonoBehaviour
 {
-    public Transform player;
+    private Transform player;
     private Transform respawnPoint;
     private Text score;
     private float maxDistance = 0f; 
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+
         GameObject respawnObject = GameObject.FindGameObjectWithTag("scorestart");
 
         respawnPoint = respawnObject.transform;

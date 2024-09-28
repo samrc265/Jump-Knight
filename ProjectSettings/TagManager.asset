@@ -7,6 +7,7 @@ TagManager:
   - death
   - destroyer
   - scorestart
+  - DeathManager
   layers:
   - Default
   - TransparentFX

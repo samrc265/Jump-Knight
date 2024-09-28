@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Death : MonoBehaviour
 {
-    public DeathManager DeathManager;
+    private DeathManager DeathManager;
 
     void Start()
     {
+        DeathManager = GameObject.FindGameObjectWithTag("DeathManager").GetComponent<DeathManager>();
     }
 
     void Update()
