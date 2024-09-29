@@ -8,6 +8,8 @@ TagManager:
   - destroyer
   - scorestart
   - DeathManager
+  - Wall
+  - Ground
   layers:
   - Default
   - TransparentFX

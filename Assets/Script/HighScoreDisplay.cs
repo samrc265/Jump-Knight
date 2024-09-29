@@ -18,7 +18,7 @@ public class HighScoreDisplay : MonoBehaviour
     {
         int currentScore = int.Parse(scoreText.text);
         Debug.Log(currentScore);
-       float highScore = PlayerPrefs.GetFloat("HighScore", 0f);
+        float highScore = PlayerPrefs.GetFloat("HighScore", 0f);
         if (currentScore > highScore)
         {
             PlayerPrefs.SetFloat("HighScore", currentScore);

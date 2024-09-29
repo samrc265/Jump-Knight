@@ -5,10 +5,10 @@ using UnityEngine;
 public class Death : MonoBehaviour
 {
     private DeathManager DeathManager;
-
     void Start()
     {
         DeathManager = GameObject.FindGameObjectWithTag("DeathManager").GetComponent<DeathManager>();
+       
     }
 
     void Update()
@@ -22,6 +22,13 @@ public class Death : MonoBehaviour
             Time.timeScale = 0;
             DeathManager.OnCanvas.SetActive(false);
             DeathManager.gameOverCanvas.SetActive(true);
+            vibrateOnCondition();
         }
+    }
+    
+    //vibrate device
+    public void vibrateOnCondition()
+    {
+        Handheld.Vibrate();
     }
 }
