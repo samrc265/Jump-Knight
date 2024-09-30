@@ -421,6 +421,8 @@ MonoBehaviour:
   - {fileID: 871921976}
   - {fileID: 1559544049}
   - {fileID: 1069372510}
+  selectionPanel: {fileID: 1798149705}
+  mainMenuPanel: {fileID: 1992910297}
 --- !u!1 &561314953
 GameObject:
   m_ObjectHideFlags: 0

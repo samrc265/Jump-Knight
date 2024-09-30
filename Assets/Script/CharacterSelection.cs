@@ -2,9 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class CharacterSelection : MonoBehaviour
 {
     [SerializeField] private GameObject[] Player;
+    [SerializeField]
+    private GameObject selectionPanel;
+    [SerializeField]
+    private GameObject mainMenuPanel;
     void Start()
     {
         
@@ -40,14 +45,20 @@ public class CharacterSelection : MonoBehaviour
     public void Select1()
     {
         PlayerPrefs.SetInt("Player", 0);
+        selectionPanel.SetActive(false);
+        mainMenuPanel.SetActive(true);
     }
     public void Select2()
     {
         PlayerPrefs.SetInt("Player", 1);
+        selectionPanel.SetActive(false);
+        mainMenuPanel.SetActive(true);
     }
     public void Select3()
     {
         PlayerPrefs.SetInt("Player", 2);
+        selectionPanel.SetActive(false);
+        mainMenuPanel.SetActive(true);
     }
 }
 

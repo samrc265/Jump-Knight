@@ -16,3 +16,6 @@
 ## V2:
     1) added vibrate on death feature for phones
     2) added on click quit condition on quit button in main menu
+
+## V3:
+    1) added functionality to certain  buttons in the costume selection panel
