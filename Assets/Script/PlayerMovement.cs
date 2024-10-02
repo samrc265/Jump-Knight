@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isTouchingWall = false;
     private bool isMovingRight = true; // Determines the direction of the next jump
 
+    [SerializeField] private ParticleSystem dust;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -41,11 +42,14 @@ public class PlayerMovement : MonoBehaviour
                 rb.velocity = new Vector2(-jumpForce, jumpForce);
                 isMovingRight = true; 
             }
+ 
         }
         else if (isGrounded)
         {
+            Debug.Log("test");
             rb.velocity = new Vector2(0, jumpForce);
         }
+        PlayDust();
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -56,7 +60,9 @@ public class PlayerMovement : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Wall"))
         {
-            isGrounded = true;
+            isTouchingWall = true;
+            Debug.Log("1");
+            //isGrounded = true;
         }
     }
 
@@ -71,5 +77,9 @@ public class PlayerMovement : MonoBehaviour
         {
             isTouchingWall = false;
         }
+    }
+    void PlayDust()
+    {
+        dust.Play();
     }
 }

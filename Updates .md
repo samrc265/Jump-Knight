@@ -19,3 +19,7 @@
 
 ## V3:
     1) added functionality to certain  buttons in the costume selection panel
+## V4:
+    1) added a dust particles to all the players
+    2) fixed a bug where player only goes up vertically
+    

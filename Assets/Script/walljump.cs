@@ -16,6 +16,7 @@ public class WallJump : MonoBehaviour
     public Transform groundCheck;
     public Transform wallCheck;
     public float checkRadius;
+    [SerializeField] private ParticleSystem dust;
 
     private void Start()
     {
@@ -56,6 +57,7 @@ public class WallJump : MonoBehaviour
                 Flip(wallJumpDirection.x);
                 jumpToRightWall = !jumpToRightWall;
             }
+            PlayDust();
         }
     }
 
@@ -63,6 +65,7 @@ public class WallJump : MonoBehaviour
     {
         if ((direction > 0 && !isFacingRight) || (direction < 0 && isFacingRight))
         {
+            Debug.Log("yooo");
             isFacingRight = !isFacingRight;
             Vector3 scaler = transform.localScale;
             scaler.x *= -1;
@@ -76,5 +79,9 @@ public class WallJump : MonoBehaviour
         Gizmos.DrawWireSphere(groundCheck.position, checkRadius);
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(wallCheck.position, checkRadius);
+    }
+    void PlayDust()
+    {
+        dust.Play();
     }
 }
