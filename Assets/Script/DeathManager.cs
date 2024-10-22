@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public class DeathManager : MonoBehaviour
 {
     public GameObject gameOverCanvas;
     public GameObject OnCanvas;
+    public TextMeshProUGUI Coin;
 
     void Start()
     {
@@ -24,6 +26,6 @@ public class DeathManager : MonoBehaviour
     }
     void Update()
     {
-       // Debug.Log("TEST");
+        Coin.text = PlayerPrefs.GetInt("Coin").ToString();
     }
 }

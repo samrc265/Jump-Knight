@@ -22,4 +22,6 @@
 ## V4:
     1) added a dust particles to all the players
     2) fixed a bug where player only goes up vertically
-    
+ ## V5:
+    1) added a placeholder for coins (2 coins per prefab)
+    2) added a coin counter in UI of a game
