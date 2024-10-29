@@ -49,6 +49,7 @@ public class WallJump : MonoBehaviour
             {
                 Vector2 groundJumpDirection = isFacingRight ? Vector2.right : Vector2.left;
                 rb.velocity = new Vector2(groundJumpDirection.x * jumpForce, jumpForce);
+                PlayDust();
             }
             else if (isWallSliding)
             {
@@ -56,8 +57,9 @@ public class WallJump : MonoBehaviour
                 rb.velocity = new Vector2(wallJumpDirection.x * jumpForce, jumpForce);
                 Flip(wallJumpDirection.x);
                 jumpToRightWall = !jumpToRightWall;
+                PlayDust();
             }
-            PlayDust();
+      
         }
     }
 

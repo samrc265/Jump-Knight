@@ -35,21 +35,23 @@ public class PlayerMovement : MonoBehaviour
             if (isMovingRight)
             {
                 rb.velocity = new Vector2(jumpForce, jumpForce);
-                isMovingRight = false; 
+                isMovingRight = false;
+                PlayDust();
             }
             else
             {
                 rb.velocity = new Vector2(-jumpForce, jumpForce);
-                isMovingRight = true; 
+                isMovingRight = true;
+                PlayDust();
             }
- 
+       
         }
         else if (isGrounded)
         {
             Debug.Log("test");
             rb.velocity = new Vector2(0, jumpForce);
         }
-        PlayDust();
+ 
     }
 
     void OnCollisionEnter2D(Collision2D collision)

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 
 public class CharacterSelection : MonoBehaviour
@@ -10,15 +12,65 @@ public class CharacterSelection : MonoBehaviour
     private GameObject selectionPanel;
     [SerializeField]
     private GameObject mainMenuPanel;
-    void Start()
-    {
-        
-    }
 
+    [SerializeField] private GameObject[] Buy;
+    [SerializeField] private GameObject[] Continue;
+
+    [SerializeField] private GameObject ThankYouPanel;
+    [SerializeField] private GameObject NotEnoughPanel;
+
+    [SerializeField] private Image InsSufficientFundPlayer;
+    [SerializeField] private Image ThankYouPlayer;
+
+    [SerializeField] private Sprite[] PlayersImage;
+    [SerializeField] private TextMeshProUGUI MoneyRequired;
+
+    [SerializeField] private int[] mrp;
+
+    [SerializeField] private GameObject ScorePanel;
+    [SerializeField] private GameObject CoinPanel;
     // Update is called once per frame
     void Update()
     {
-        
+        for(int i=0;i<mrp.Length;i++)
+        {
+           if( PlayerPrefs.GetInt($"Character{i}Brought") ==1)
+            {
+                TurnOffBuy(i);
+            }
+        }
+    }
+
+    public void TurnOffBuy(int a)
+    {
+        Buy[a].SetActive(false);
+        Continue[a].SetActive(true);
+    }
+    public void BuyIt(int p)
+    {
+        if (PlayerPrefs.GetInt("Coin") >= mrp[p])
+        {
+            PlayerPrefs.SetInt($"Character{p}Brought", 1);
+            PlayerPrefs.SetInt("Coin", PlayerPrefs.GetInt("Coin") - mrp[p]);
+            ThankYouForPurchase(p);
+        }
+        else
+        {
+            InSufficientFund(p);
+        }
+
+    }
+    public void ThankYouForPurchase(int p)
+    {
+        ThankYouPlayer.sprite = PlayersImage[p];
+        ThankYouPanel.SetActive(true);
+    }
+    public void InSufficientFund(int p)
+    {
+        InsSufficientFundPlayer.sprite = PlayersImage[p];
+        int a = mrp[p] - PlayerPrefs.GetInt("Coin");
+        MoneyRequired.text = $"<sprite=1>{a}:<br>coins are Needed".ToString();
+        NotEnoughPanel.SetActive(true);
     }
     public void CloseALL()
     {
@@ -27,38 +79,20 @@ public class CharacterSelection : MonoBehaviour
             Player[i].SetActive(false);
         }
     }
-    public void Player1()
+    public void PlayerSelect(int n)
     {
         CloseALL();
-        Player[0].SetActive(true);
+        Player[n].SetActive(true);
     }
-    public void Player2()
+    public void Select(int n)
     {
-        CloseALL();
-        Player[1].SetActive(true);
-    }
-    public void Player3()
-    {
-        CloseALL();
-        Player[2].SetActive(true);
-    }
-    public void Select1()
-    {
-        PlayerPrefs.SetInt("Player", 0);
+        PlayerPrefs.SetInt("Player", n);
         selectionPanel.SetActive(false);
+        CoinPanel.SetActive(false);
+        ScorePanel.SetActive(true);
         mainMenuPanel.SetActive(true);
     }
-    public void Select2()
-    {
-        PlayerPrefs.SetInt("Player", 1);
-        selectionPanel.SetActive(false);
-        mainMenuPanel.SetActive(true);
-    }
-    public void Select3()
-    {
-        PlayerPrefs.SetInt("Player", 2);
-        selectionPanel.SetActive(false);
-        mainMenuPanel.SetActive(true);
-    }
+
+   
 }
 

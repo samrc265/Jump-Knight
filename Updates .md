@@ -25,3 +25,9 @@
  ## V5:
     1) added a placeholder for coins (2 coins per prefab)
     2) added a coin counter in UI of a game
+##  V6:
+    1)Added the probability of 1/4 chance for coin to spawn per prefab
+    2)Dust particle only playing when player hits the wall or ground
+    3)Refractored the characterSelection Script to Easily accomodate more characters in future
+    4)Added the Market System in the Game
+    
