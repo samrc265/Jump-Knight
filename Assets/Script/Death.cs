@@ -1,10 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Death : MonoBehaviour
 {
     private DeathManager DeathManager;
+    
+    private void Awake()
+    {
+        
+    }
     void Start()
     {
         DeathManager = GameObject.FindGameObjectWithTag("DeathManager").GetComponent<DeathManager>();
@@ -23,6 +29,7 @@ public class Death : MonoBehaviour
             DeathManager.OnCanvas.SetActive(false);
             DeathManager.gameOverCanvas.SetActive(true);
             vibrateOnCondition();
+            FindObjectOfType<AudioManager>().playSound("PlayerDeath");
         }
     }
     
@@ -30,5 +37,6 @@ public class Death : MonoBehaviour
     public void vibrateOnCondition()
     {
         Handheld.Vibrate();
+        
     }
 }
