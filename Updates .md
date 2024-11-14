@@ -31,3 +31,6 @@
     3)Refractored the characterSelection Script to Easily accomodate more characters in future
     4)Added the Market System in the Game
     
+## V7:
+    1)Added main menu audio, gameplay audio and player death audio.
+    2)Added functionality to mute all sounds on click.
