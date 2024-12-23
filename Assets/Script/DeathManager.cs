@@ -22,6 +22,7 @@ public class DeathManager : MonoBehaviour
     }
     public void Replay()
     {
+        FindObjectOfType<AudioManager>().playSound("click");
         SceneManager.LoadScene(1);
     }
     void Update()

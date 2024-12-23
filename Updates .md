@@ -34,3 +34,6 @@
 ## V7:
     1)Added main menu audio, gameplay audio and player death audio.
     2)Added functionality to mute all sounds on click.
+## V8:
+    1)Added Animated Coin sprite and UI
+    2)Added 2 sound effect of clicking and collecting coins

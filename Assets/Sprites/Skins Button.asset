@@ -21,7 +21,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
+        m_Texture: {fileID: 2800000, guid: 3e4320a4ee69fe94a99f1122c54f79be, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
@@ -75,12 +75,12 @@ MonoBehaviour:
     m_StrikethroughOffset: 0
     m_StrikethroughThickness: 0
     m_TabWidth: 0
-  spriteSheet: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
+  spriteSheet: {fileID: 2800000, guid: 3e4320a4ee69fe94a99f1122c54f79be, type: 3}
   m_SpriteCharacterTable:
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 0
-    m_Scale: 22
+    m_Scale: 1.06
     m_Name: Skins Button
     m_HashCode: 900528026
   - m_ElementType: 2
@@ -126,6 +126,21 @@ MonoBehaviour:
     m_Name: UIMask
     m_HashCode: -1034051960
   m_SpriteGlyphTable:
+  - m_Index: 1
+    m_Metrics:
+      m_Width: 59.5
+      m_Height: 34.49
+      m_HorizontalBearingX: -16
+      m_HorizontalBearingY: 16
+      m_HorizontalAdvance: 32
+    m_GlyphRect:
+      m_X: 2
+      m_Y: 2
+      m_Width: 45
+      m_Height: 57
+    m_Scale: 1
+    m_AtlasIndex: 0
+    sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   - m_Index: 0
     m_Metrics:
       m_Width: 757.23
@@ -134,39 +149,24 @@ MonoBehaviour:
       m_HorizontalBearingY: 371.5
       m_HorizontalAdvance: 739
     m_GlyphRect:
-      m_X: -272
-      m_Y: -55
-      m_Width: 739
-      m_Height: 743
+      m_X: -4
+      m_Y: 10
+      m_Width: 54
+      m_Height: 47
     m_Scale: 1
     m_AtlasIndex: 0
     sprite: {fileID: 21300000, guid: 745f4e5be8872034b8ff7c439a0a32c2, type: 3}
-  - m_Index: 1
-    m_Metrics:
-      m_Width: 62.2
-      m_Height: 40
-      m_HorizontalBearingX: -17.79
-      m_HorizontalBearingY: 30.3
-      m_HorizontalAdvance: 40
-    m_GlyphRect:
-      m_X: 0
-      m_Y: 5
-      m_Width: 72
-      m_Height: 46
-    m_Scale: 1
-    m_AtlasIndex: 0
-    sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   - m_Index: 2
     m_Metrics:
-      m_Width: 32
-      m_Height: 32
+      m_Width: 43.8
+      m_Height: 47.4
       m_HorizontalBearingX: -16
       m_HorizontalBearingY: 16
-      m_HorizontalAdvance: 32
+      m_HorizontalAdvance: 146.9
     m_GlyphRect:
-      m_X: 0
-      m_Y: 0
-      m_Width: 32
+      m_X: -5
+      m_Y: 10
+      m_Width: 66
       m_Height: 32
     m_Scale: 1
     m_AtlasIndex: 0

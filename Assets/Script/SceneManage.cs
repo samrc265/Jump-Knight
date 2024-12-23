@@ -19,10 +19,12 @@ public class SceneManage : MonoBehaviour
 
     public void PlayGame()
     {
+        FindObjectOfType<AudioManager>().playSound("click");
         SceneManager.LoadScene(1);
     }
     public void QuitGame()
     {
+        FindObjectOfType<AudioManager>().playSound("click");
         Application.Quit();
     }
 }

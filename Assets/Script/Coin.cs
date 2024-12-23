@@ -8,6 +8,7 @@ public class Coin : MonoBehaviour
     {
         if(collision.tag=="Player")
         {
+            FindObjectOfType<AudioManager>().playSound("coin");
             PlayerPrefs.SetInt("Coin", PlayerPrefs.GetInt("Coin") + 1);
             Destroy(gameObject);
         }

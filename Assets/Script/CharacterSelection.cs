@@ -50,6 +50,7 @@ public class CharacterSelection : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("Coin") >= mrp[p])
         {
+            FindObjectOfType<AudioManager>().playSound("coin");
             PlayerPrefs.SetInt($"Character{p}Brought", 1);
             PlayerPrefs.SetInt("Coin", PlayerPrefs.GetInt("Coin") - mrp[p]);
             ThankYouForPurchase(p);
@@ -69,7 +70,7 @@ public class CharacterSelection : MonoBehaviour
     {
         InsSufficientFundPlayer.sprite = PlayersImage[p];
         int a = mrp[p] - PlayerPrefs.GetInt("Coin");
-        MoneyRequired.text = $"<sprite=1>{a}:<br>coins are Needed".ToString();
+        MoneyRequired.text = $"{a} :<br>coins are Needed".ToString();
         NotEnoughPanel.SetActive(true);
     }
     public void CloseALL()
