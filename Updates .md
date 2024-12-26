@@ -37,3 +37,5 @@
 ## V8:
     1)Added Animated Coin sprite and UI
     2)Added 2 sound effect of clicking and collecting coins
+## V9:
+    1)Added object pooling for coins and bullet
