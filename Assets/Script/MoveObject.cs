@@ -12,8 +12,8 @@ public class MoveObject : MonoBehaviour
 
     void Start()
     {
-        Destroy(gameObject, delay);
-
+        //Destroy(gameObject, delay);
+        gameObject.SetActive(false);
         movingRight = initialDirection == Direction.Right;
     }
 

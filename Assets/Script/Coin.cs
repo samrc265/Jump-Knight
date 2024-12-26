@@ -10,7 +10,8 @@ public class Coin : MonoBehaviour
         {
             FindObjectOfType<AudioManager>().playSound("coin");
             PlayerPrefs.SetInt("Coin", PlayerPrefs.GetInt("Coin") + 1);
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

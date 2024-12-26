@@ -15,6 +15,13 @@ public class BulletSpawner : MonoBehaviour
     void SpawnBullet()
     {
         
-        Instantiate(bulletPrefab, spawnLocation.position, spawnLocation.rotation);
+        //Instantiate(bulletPrefab, spawnLocation.position, spawnLocation.rotation);
+        GameObject bullet = ObjectPool.instance.GetPooledObjects();
+
+        if(bullet != null )
+        {
+            bullet.transform.position = spawnLocation.position;
+            bullet.SetActive(true);
+        }
     }
 }

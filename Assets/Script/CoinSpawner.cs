@@ -13,8 +13,15 @@ public class CoinSpawner : MonoBehaviour
         Debug.Log(rand);
         if(rand==1)
         {
-        GameObject c=Instantiate(Coin, gameObject.transform);
-            c.transform.SetParent(null);
+            //GameObject c=Instantiate(Coin, gameObject.transform);
+            GameObject c = ObjectPool.instance.GetPooledObjects();
+            if(c!=null )
+            {
+                c.transform.position = gameObject.transform.position;
+                c.SetActive(true);
+                c.transform.SetParent(null);
+            }
+            
         }
         
     }
