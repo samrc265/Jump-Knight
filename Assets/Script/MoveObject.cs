@@ -13,7 +13,7 @@ public class MoveObject : MonoBehaviour
     void Start()
     {
         //Destroy(gameObject, delay);
-        gameObject.SetActive(false);
+        
         movingRight = initialDirection == Direction.Right;
     }
 
@@ -22,6 +22,12 @@ public class MoveObject : MonoBehaviour
         float direction = movingRight ? 1 : -1;
 
         transform.Translate(Vector2.right * direction * speed * Time.deltaTime);
+
+
+        if(transform.position.x >3.65)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     public void ChangeDirection()
@@ -29,11 +35,5 @@ public class MoveObject : MonoBehaviour
         movingRight = !movingRight;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Wall"))
-        {
-            ChangeDirection();
-        }
-    }
+    
 }

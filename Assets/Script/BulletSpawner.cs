@@ -20,6 +20,7 @@ public class BulletSpawner : MonoBehaviour
 
         if(bullet != null )
         {
+            
             bullet.transform.position = spawnLocation.position;
             bullet.SetActive(true);
         }

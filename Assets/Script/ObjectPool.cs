@@ -8,13 +8,11 @@ public class ObjectPool : MonoBehaviour
     public static ObjectPool instance;
 
     private List<GameObject> pooled = new List<GameObject>();
-    private int amountToPool = 3;
+    private int amountToPool = 4;
 
     [SerializeField]
-    private GameObject _coinPrefab;
-    [SerializeField]
     private GameObject _bulletPrefab;
-    public Transform _coinspawnLocation;
+    
 
     private void Awake()
     {
@@ -29,26 +27,16 @@ public class ObjectPool : MonoBehaviour
     {
         for(int i=0; i<amountToPool; i++)
         {
-            
-            GameObject objC = Instantiate(_coinPrefab, _coinspawnLocation);
+            //creating object pool
             GameObject objB = Instantiate(_bulletPrefab);
-            
-                
-            objC.SetActive(false);
             objB.SetActive(false);
-          
-            pooled.Add(objC);
             pooled.Add(objB);
-          
-               
-                
-            
-            
         }
     }
     
     public GameObject GetPooledObjects()
     {
+        //checking for number of pooled objects active in hierarchy
         for(int i=0;i<pooled.Count;i++)
         {
             if (!pooled[i].activeInHierarchy)
